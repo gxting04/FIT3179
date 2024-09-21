@@ -21,13 +21,13 @@
             }
         },
         {
-            "calculate": "datum.votes/datum.area", "as": "Votes"
+            "calculate": "datum.votes/datum.area", "as": "Voter Density"
         }
     ],
     "mark": { "type": "geoshape" },
     "encoding": {
         "color": {
-            "field": "Votes",
+            "field": "Voter Density",
             "type": "quantitative",
             "scale": {
                 "scheme": "blues" ,
