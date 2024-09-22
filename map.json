@@ -1,3 +1,4 @@
+
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": {
@@ -36,7 +37,8 @@
         },
         "tooltip": [
             { "field": "properties.name", "type": "nominal", "title": "State" },
-            { "field": "votes", "type": "quantitative", "title": "Total Votes" }
+            { "field": "votes", "type": "quantitative", "title": "Total Votes"},
+            { "field": "area", "type": "quantitative", "title": "Area (km2)"}
         ]
     }
 }
