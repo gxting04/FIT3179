@@ -1,0 +1,96 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+        "text": "Voters by Age Group",
+        "fontSize": 28},
+  "width": 900,
+  "height": 800,
+  "data": {
+    "url": "age_group.csv",  
+    "format": {
+      "type": "csv"
+    }
+  },
+  "params": [
+    {
+      "name": "Age_Group_selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "18-20",
+          "21-29",
+          "30-39",
+          "40-49",
+          "50-59",
+          "60-69",
+          "70-79",
+          "80-89",
+          "90+"
+        ],
+        "labels": [
+          "Show All", 
+          "18-20",
+          "21-29",
+          "30-39",
+          "40-49",
+          "50-59",
+          "60-69",
+          "70-79",
+          "80-89",
+          "90+"
+        ],
+        "name": "Age Group Selection: "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "filter": "Age_Group_selection == null || datum.Age_Group == Age_Group_selection"
+    }
+  ],
+  "layer": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "y": {
+          "field": "Age_Group",
+          "type": "nominal",
+          "title": "Age Group"
+        },
+        "x": {
+          "field": "Voters",
+          "type": "quantitative",
+          "title": "Number of Voters"
+        },
+        "tooltip": [
+          {"field": "Age_Group", "type": "nominal"},
+          {"field": "Voters", "type": "quantitative"}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "dx": 5 
+      },
+      "encoding": {
+        "y": {
+          "field": "Age_Group",
+          "type": "nominal"
+        },
+        "x": {
+          "field": "Voters",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "Voters" 
+        },
+        "color": {
+          "value": "black" 
+        }
+      }
+    }
+  ]
+}
