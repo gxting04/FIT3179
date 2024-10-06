@@ -20,3 +20,9 @@ body {
     /* margin: 0 auto; */
     margin-left: -200px;
 }
+
+#bar {
+    width: 70%; /* Adjust as needed */
+    height: 800px; /* Adjust as needed */
+    margin-left: -40px;
+}
