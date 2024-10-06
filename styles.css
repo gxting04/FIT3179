@@ -8,6 +8,14 @@ body {
     min-height: 100vh;
 }
 
+h1{
+    text-align: center;
+}
+
+h2{
+    text-align: center;
+}
+
 .container {
     text-align: center;
 }
