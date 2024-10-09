@@ -1,0 +1,71 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Coalition Seats visualization with highlights for coalitions having 112 or more seats.",
+    "width": 600,
+    "height": 400,
+    "layer": [
+      {
+        "data": {
+          "url": "coalition_seats.csv",
+          "format": {"type": "csv"}
+        },
+        "layer": [
+          {
+            "mark": "bar",
+            "encoding": {
+              "x": {"field": "coalition", "type": "ordinal", "axis": {"labelAngle": 0}},
+              "y": {
+                "field": "seats",
+                "type": "quantitative",
+                "title": "Number of Seats",
+                "scale": {"domain": [0, 222], "nice": false}
+              },
+              "tooltip": [
+                {"field": "coalition", "title": "Coalition"},
+                {"field": "seats", "title": "Number of Seats"}
+              ]
+            }
+          },
+          {
+            "mark": "bar",
+            "transform": [
+              {"filter": "datum.seats >= 112"},
+              {"calculate": "112", "as": "baseline"}
+            ],
+            "encoding": {
+              "x": {"field": "coalition", "type": "ordinal"},
+              "y": {"field": "baseline", "type": "quantitative"},
+              "y2": {"field": "seats"},
+              "color": {"value": "#e45755"},
+              "tooltip": [
+                {"field": "coalition", "title": "Coalition"},
+                {"field": "seats", "title": "Number of Seats"}
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "data": {"values": [{}]},
+        "encoding": {
+          "y": {"datum": 112}
+        },
+        "layer": [
+          {
+            "mark": "rule"
+          },
+          {
+            "mark": {
+              "type": "text",
+              "align": "right",
+              "baseline": "bottom",
+              "dx": -2,
+              "dy": -2,
+              "x": "width",
+              "text": "112 Seats for Simple Majority Government"
+            }
+          }
+        ]
+      }
+    ]
+}
