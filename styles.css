@@ -4,19 +4,96 @@ h1{
     text-align: center;
 }
 
+h2{
+    text-align: center;
+}
+
+table {
+    width: 50%; /* Set the table width */
+    margin: 20px auto; /* Center the table */
+    border-collapse: collapse; /* Collapse borders */
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid black;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
 
 .container {
     text-align: center;
 }
 
+.row {
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center the items */
+    margin-top: 20px; /* Add margin on top */
+}
+
+.col {
+    margin: 0 20px; /* Add some spacing between columns */
+}
+
+
+.stats {
+    text-align: center; /* Center text inside stat1 */
+}
+
+.stats_img {
+    width: 50px; /* Set a smaller size for the image */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.stats_img1 {
+    width: 47px; /* Set a smaller size for the image */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.stats_title {
+    font-size: 28px;
+    color: darkred; /* Increase font size for the title */
+    margin: 10px 0; /* Add margin above and below */
+}
+
+.stats_desc {
+    font-size: 16px; /* Adjust font size for description */
+    color: gray; /* Optional: change description color */
+}
+
+
+
 #map {
-    width: 70%;
-    height: 800px; 
+    width: 70%; /* Adjust as needed */
+    height: 800px; /* Adjust as needed */
     margin-left: 100px;
 }
 
-#bar {
-    width: 70%;
-    height: 800px;
+#pyramid {
+    width: 70%; /* Adjust as needed */
+    height: 800px; /* Adjust as needed */
     margin-left: -40px;
 }
+
+#ph {
+    width: 70%; /* Adjust as needed */
+    height: 800px; /* Adjust as needed */
+    margin-left: -40px;
+}
+
+#coalition {
+    width: 70%; /* Adjust as needed */
+    height: 800px; /* Adjust as needed */
+    margin-left: -40px;
+}
+
+#govern {
+    width: 70%; /* Adjust as needed */
+    height: 800px; /* Adjust as needed */
+    margin-left: -40px;
+}
+
